@@ -35,6 +35,9 @@ html {
     display: inline-block;
     margin-top: 15px;
     border: none;
+    text-align: center;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 .btn:hover {
@@ -49,6 +52,10 @@ html {
 
 .mt-16 {
     margin-top: 16px !important;
+}
+
+.mt-32 {
+    margin-top: 32px !important;
 }
 
 .row {
@@ -91,6 +98,8 @@ html {
     height: 46px;
     background-color: #000;
     z-index: 1;
+    /* overflow: hidden; */
+   
 }
 
 #nav {
@@ -141,6 +150,10 @@ html {
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
+#nav li.show .subnav {
+    display: block;
+}
+
 #nav .subnav a {
     color: #000;
     padding: 0 12px;
@@ -151,16 +164,33 @@ html {
     font-size: 14px;
 }
 
+#header .mobile-menu-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#header .mobile-menu-btn,
 #header .search-btn {
     float: right;
     padding: 0 21px;
-    cursor: pointer;
 }
 
+#header .mobile-menu-btn:hover,
 #header .search-btn:hover {
+    cursor: pointer;
     background-color: #f44336;
 }
 
+#header .mobile-menu-btn:hover {
+     background-color: #ccc;
+}
+#header .mobile-menu-btn:hover .menu-icon {
+     color: #000;
+}
+
+#header .menu-icon,
 #header .search-icon {
     color: #fff;
     font-size: 20px;
@@ -191,15 +221,19 @@ html {
 #slider .text-description {
     font-size: 15px;
     margin-top: 25px;
+    text-shadow: 0 0 1px #000;
 }
 
 
 
 #content .content-section {
    width: 800px;
+   max-width: 100%;
    padding: 64px 0 112px;
    margin-left: auto;
    margin-right: auto;
+   padding-left: 16px;
+   padding-right: 16px;
 }
 
 #content .section-heading {
@@ -220,12 +254,12 @@ html {
 #content .about-text {
     font-size: 15px;
     margin-top: 25px;
-    text-align: left;   /* đổi từ justify sang left */
-    line-height: 1.6;   /* tăng khoảng cách dòng cho thoáng */
+    text-align: left;  
+    line-height: 1.6;   
 }
 
-#content .members-list {   /* sửa đúng tên class */
-    margin-top: 48px;
+#content .members-list {   
+    margin-top: 32px;
 }
 
 #content .member-name {
@@ -433,15 +467,26 @@ header.modal-header {
     display: inline-block;
 }
 
+.contact-info a {
+    color: #101aef;
+    opacity: 0.8;
+}
+
+.contact-info a:hover {
+    opacity: 1;
+}
+
 .contact-form {
     font-size: 15px;
 }
+
 
 .contact-form .form-control {
     padding: 10px;
     border: 1px solid #ccc;
     width: 100%;
 }
+
 
 /* Map section */
 .map-section img {
